@@ -57,26 +57,17 @@
       </div>
     </div>
 
-    <!-- Graduation Year -->
+    <!-- Graduation Year (Fixed to dropdown) -->
     <div class="mb-3">
-      <label class="form-label">Graduation Year</label><br>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="grad-year" id="grad-2020" value="2020" required>
-        <label class="form-check-label" for="grad-2020">2020</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="grad-year" id="grad-2021" value="2021" required>
-        <label class="form-check-label" for="grad-2021">2021</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="grad-year" id="grad-2022" value="2022" required>
-        <label class="form-check-label" for="grad-2022">2022</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="grad-year" id="grad-2023" value="2023" required>
-        <label class="form-check-label" for="grad-2023">2023</label>
-      </div>
-      <div class="invalid-feedback d-block">
+      <label for="grad-year-select" class="form-label">Graduation Year</label>
+      <select class="form-select" id="grad-year-select" required>
+        <option value="">Select year</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+      </select>
+      <div class="invalid-feedback">
         Please select your graduation year.
       </div>
     </div>
@@ -95,22 +86,22 @@
   </form>
 </div>
 
-<!-- Bootstrap JS (required for validation) -->
+<!-- Bootstrap JS (for validation) -->
 <script>
   // Bootstrap form validation
   (function () {
-    'use strict'
-    const forms = document.querySelectorAll('.needs-validation')
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
     Array.from(forms).forEach(function (form) {
       form.addEventListener('submit', function (event) {
         if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
+          event.preventDefault();
+          event.stopPropagation();
         }
-        form.classList.add('was-validated')
-      }, false)
-    })
-  })()
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
 </script>
 
 </body>
